@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 router.post("/upload", requireAuth, upload.single("pdfFile"), (req, res) => {
-  console.log(req.file);
+ 
 
   const parsedData = JSON.parse(req.body.data);
   const productName = parsedData.productName;
@@ -89,7 +89,7 @@ router.get("/vendor-products", requireAuth, async (req, res) => {
   try {
     const userId = req.userId;
     const products = await Product.find({ user: userId });
-    console.log(products);
+   
     res.json(products);
   } catch (error) {
     console.error("Error fetching vendor products:", error);
