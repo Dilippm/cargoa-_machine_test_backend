@@ -5,7 +5,8 @@ const cors = require('cors');
 const app = express();
 //const path = require('path')
 require('dotenv').config()
-const MONGO_URl =process.env.MONGO_URl
+const MONGO_URl =process.env.MONGO_URL
+
 const CLIENT_URL  = process.env.CLIENT_URL
 // Middleware
 
